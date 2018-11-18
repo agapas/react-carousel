@@ -20,6 +20,10 @@ export class App extends React.Component<CarouselProps, CarouselState> {
     super(props);
     this.state = { activeSlideIndex: 0 };
   }
+
+  setActive = (e:any) =>
+    this.setState({ activeSlideIndex: parseInt(e.target.id) });
+
   render() {
     const { imagesUrls = [] } = this.props;
     const { activeSlideIndex } = this.state;
@@ -31,9 +35,9 @@ export class App extends React.Component<CarouselProps, CarouselState> {
       <div className="source">Source of images: https://pixabay.com</div>
       <ul className="dots">
         {imagesUrls.map((_url, index) => <Dot
-          key={index}
+          id={index}
           isActive={index === activeSlideIndex}
-          onClick={() => undefined} />
+          onClick={this.setActive} />
         )}
       </ul>
     </div>;
