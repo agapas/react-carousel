@@ -2,27 +2,16 @@ import * as React from 'react';
 import { Arrow } from './arrow';
 
 interface SlideProps {
-  imageUrl: string
+  imageUrl: string,
+  onClick: () => void
 }
 
 export const Slide = (props:SlideProps) => {
-  const { imageUrl } = props;
-  const style = {
-    backgroundImage: `url(${imageUrl})`
-  };
+  const { imageUrl, onClick } = props;
+  const style = { backgroundImage: `url('${imageUrl}')` };
 
   return <div className="slide" style={style}>
-    <Arrow
-      key="left"
-      direction="left"
-      active={false}
-      onClick={() => undefined}
-    />
-    <Arrow
-      key="right"
-      direction="right"
-      active={false}
-      onClick={() => undefined}
-    />
+    <Arrow key="left" direction="left" onClick={onClick} />
+    <Arrow key="right" direction="right" onClick={onClick} />
   </div>;
 };

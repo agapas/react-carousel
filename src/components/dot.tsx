@@ -1,14 +1,13 @@
 import * as React from 'react';
 
 interface DotProps {
-  id: string
-  active: boolean
+  isActive: boolean
   onClick: () => void
 }
 
 export const Dot = (props:DotProps) => {
-  const { id, active, onClick } = props;
-  const className = `dot ${active ? 'active' : ''}`;
+  const { isActive, onClick } = props;
+  const className = `dot ${isActive ? 'active' : ''}`;
 
-  return <li id={id} className={className} onClick={onClick}></li>;
+  return <li className={className} onClick={onClick}></li>;
 };
