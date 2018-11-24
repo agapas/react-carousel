@@ -1,5 +1,5 @@
 # react-carousel
-Image carousel made with React and TypeScript
+Image carousel made with React and TypeScript using ES6 syntax (and Class Fields and Static Properties from ES7).
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).

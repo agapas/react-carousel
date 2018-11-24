@@ -1,25 +1,31 @@
 import * as React from 'react';
-import { Dot } from './dot';
-import { ImageSource } from './image-source';
+import { Dots } from './dots';
+import { ImagesSource } from './images-source';
 import { Slide } from './slide';
 import '../assets/lib/css/solid.css';
 import '../assets/lib/css/fontawesome.css';
-import '../styles/app.css';
+import '../styles/carousel-app.css';
 
 export interface CarouselProps {
   imagesUrls: string[]
+  imagesSource: string[]
 }
 
 type CarouselState = {
   currentSlideIndex: number
 };
 
-type Props = CarouselProps & CarouselState;
+export class CarouselApp extends React.Component<CarouselProps, CarouselState> {
+  state = { currentSlideIndex: 0 }; // ES7
 
-export class App extends React.Component<CarouselProps, CarouselState> {
-  constructor(props:Props) {
-    super(props);
-    this.state = { currentSlideIndex: 0 };
+  static defaultProps = { // ES7
+    imagesUrls: [],
+    imagesSource: []
+  }
+
+  shouldComponentUpdate = (_:CarouselProps, nextState:CarouselState) => {
+    const { currentSlideIndex } = this.state;
+    return currentSlideIndex !== nextState.currentSlideIndex;
   }
 
   onSlideChange = (e:any) => {
@@ -43,22 +49,17 @@ export class App extends React.Component<CarouselProps, CarouselState> {
     this.setState({ currentSlideIndex: parseInt(e.target.id) });
 
   render() {
-    const { imagesUrls = [] } = this.props;
+    const { imagesUrls, imagesSource } = this.props;
     const { currentSlideIndex } = this.state;
-
-    return <div className="carousel-container">
+    return <React.Fragment>
       <Slide
         imageUrl={imagesUrls[currentSlideIndex]}
         onChange={this.onSlideChange} />
-      <ImageSource url="https://pixabay.com"/>
-      <ul className="dots">
-        {imagesUrls.map((_url, index) => <Dot
-          key={index}
-          id={index}
-          isActive={index === currentSlideIndex}
-          onClick={this.onDotChange} />
-        )}
-      </ul>
-    </div>;
+      <ImagesSource source={imagesSource} />
+      <Dots
+        images={imagesUrls}
+        currentIndex={currentSlideIndex}
+        onChange={this.onDotChange} />
+    </React.Fragment>;
   }
 }

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { App } from './components/app';
+import { CarouselApp } from './components/carousel-app';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -10,8 +10,10 @@ const imagesUrls:string[] = [
   require('./assets/images/3.jpg')
 ];
 
+const imagesSource:string[] = ['https://pixabay.com', 'https://unsplash.com'];
+
 ReactDOM.render(
-  <App imagesUrls={imagesUrls} />,
+  <CarouselApp imagesUrls={imagesUrls} imagesSource={imagesSource} />,
   document.getElementById('root') as HTMLElement
 );
 registerServiceWorker();
