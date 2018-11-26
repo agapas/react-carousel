@@ -16,12 +16,14 @@ type CarouselState = {
 };
 
 export class CarouselApp extends React.Component<CarouselProps, CarouselState> {
-  state = { currentSlideIndex: 0 }; // ES7
+  static displayName = 'CarouselApp'; // ES7
 
   static defaultProps = { // ES7
     imagesUrls: [],
     imagesSource: []
   }
+
+  state = { currentSlideIndex: 0 }; // ES7
 
   shouldComponentUpdate = (_:CarouselProps, nextState:CarouselState) => {
     const { currentSlideIndex } = this.state;

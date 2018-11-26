@@ -12,3 +12,5 @@ export const Dot = (props:DotProps) => {
 
   return <li id={id.toString()} className={className} onClick={onClick}></li>;
 };
+
+Dot.displayName = 'Dot';
