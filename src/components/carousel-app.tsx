@@ -57,7 +57,7 @@ export class CarouselApp extends React.Component<CarouselProps, CarouselState> {
       <Slide
         imageUrl={imagesUrls[currentSlideIndex]}
         onChange={this.onSlideChange} />
-      <ImagesSource source={imagesSource} />
+      {imagesSource.length && <ImagesSource source={imagesSource} />}
       <Dots
         images={imagesUrls}
         currentIndex={currentSlideIndex}

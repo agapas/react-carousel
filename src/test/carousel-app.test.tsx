@@ -16,7 +16,7 @@ describe('CarouselApp', () => {
     expect(slide.prop('imageUrl')).toBeUndefined();
     expect(slide.prop('onChange')).toBeDefined();
 
-    expect(comp.find(ImagesSource).prop('source')).toEqual([]);
+    expect(comp.find(ImagesSource).exists()).toBe(false);
 
     const dots = comp.find(Dots);
     expect(dots.prop('images')).toEqual([]);
