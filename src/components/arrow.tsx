@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { IconContext } from "react-icons";
+import { FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/fa';
 
 interface ArrowProps {
   direction?: string
@@ -7,10 +9,14 @@ interface ArrowProps {
 
 export const Arrow = (props:ArrowProps) => {
   const { direction = 'left', onClick } = props;
-
-  return <div className="arrow" onClick={onClick}>
-    <i id={direction} className={`fas fa-chevron-circle-${direction} fa-2x`}></i>
-  </div>;
+  return <IconContext.Provider value={{ size: '2em' }}>
+    <div className="arrow" onClick={onClick}>
+      {direction === 'left'
+        ? <FaChevronCircleLeft />
+        : <FaChevronCircleRight />
+      }
+    </div>
+  </IconContext.Provider>;
 };
 
 Arrow.displayName = 'Arrow';

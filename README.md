@@ -4,11 +4,13 @@ Unit tests made with Jest, Enzyme and Sinon.
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and [TypeScript package](https://www.npmjs.com/package/react-scripts-ts).
 
+The project uses [react-icons](https://github.com/react-icons/react-icons).
+
 
 ## Running the project
 
-- go to project directory (in cmd or Powershell on Windows, Bash on Linux and macOS)
-- run `npm i` (do it once, just the first time)
+- go to project directory
+- run `npm i` to install all dependencies (just a first time)
 - run `npm start` (it runs the app in the development mode and it should automatically open [http://localhost:3000](http://localhost:3000) in the browser)
 
 
