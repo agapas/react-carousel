@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { CarouselApp } from './components/carousel-app';
+import './assets/lib/css/solid.css';
+import './assets/lib/css/fontawesome.css';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 

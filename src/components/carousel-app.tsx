@@ -2,9 +2,6 @@ import * as React from 'react';
 import { Dots } from './dots';
 import { ImagesSource } from './images-source';
 import { Slide } from './slide';
-import '../assets/lib/css/solid.css';
-import '../assets/lib/css/fontawesome.css';
-import '../styles/carousel-app.css';
 
 export interface CarouselProps {
   imagesUrls: string[]
