@@ -7,6 +7,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 The project uses [react-icons](https://github.com/react-icons/react-icons).
 
 
+## User interface
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/agapas/react-carousel/master/src/images/carouselUI.png" width="80%"/>
+</p>
+
+
 ## Running the project
 
 - go to project directory
